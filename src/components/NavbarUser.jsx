@@ -29,7 +29,7 @@ const NavbarUser = () => {
       </Fragment>
     )
   } else {
-    content = <Nav.Link eventKey={2} as={Link} to={loginUrl}>Login</Nav.Link>
+    content = <Nav.Link eventKey={2} href={loginUrl}>Login</Nav.Link>
   }
 
   return (
