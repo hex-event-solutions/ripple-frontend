@@ -23,7 +23,7 @@ import BlurImage from '../../../elements/BlurImage'
 import AssetTypeForm from './AssetTypeForm'
 
 const getQuery = loader('./get.gql')
-const getSpecificationValuesQuery = loader('./getspecificationValues.gql')
+const getSpecificationValuesQuery = loader('./getSpecificationValues.gql')
 const updateMutation = loader('./update.gql')
 const createImageMutation = loader('./createImage.gql')
 const uploadImageMutation = loader('./uploadImage.gql')
