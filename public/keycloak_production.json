@@ -1,0 +1,8 @@
+{
+  "realm": "ripple",
+  "auth-server-url": "https://idp.hexes.co.uk/auth/",
+  "ssl-required": "external",
+  "resource": "ripple-frontend",
+  "public-client": true,
+  "confidential-port": 0
+}
