@@ -1,0 +1,5 @@
+mutation CreateAsset($input: CreateAssetsInput!) {
+  createAsset(input: $input) {
+    assets { id }
+  }
+}

@@ -1,0 +1,5 @@
+mutation TestDocumentType($input: GenerateDocumentTypesInput!) {
+  testDocumentType(input: $input) {
+    document { serviceUrl }
+  }
+}

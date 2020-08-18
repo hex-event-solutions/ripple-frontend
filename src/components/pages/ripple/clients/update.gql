@@ -1,0 +1,8 @@
+mutation UpdateClient($input: UpdateClientsInput!) {
+  updateClient(input: $input) {
+    client {
+      id organisationName address1 address2 address3 city county postcode discount
+      clientType { id name }
+    }
+  }
+}

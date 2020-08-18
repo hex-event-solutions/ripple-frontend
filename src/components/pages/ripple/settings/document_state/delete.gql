@@ -1,0 +1,5 @@
+mutation DeleteDocumentState($input: DeleteDocumentStatesInput!) {
+  deleteDocumentState(input: $input) {
+    id
+  }
+}

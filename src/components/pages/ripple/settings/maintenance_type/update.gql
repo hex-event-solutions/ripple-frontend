@@ -1,0 +1,5 @@
+mutation UpdateMaintenanceType($input: UpdateMaintenanceTypesInput!) {
+  updateMaintenanceType(input: $input) {
+    maintenanceType { id name }
+  }
+}

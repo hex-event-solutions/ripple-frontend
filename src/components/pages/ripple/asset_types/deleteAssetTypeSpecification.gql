@@ -1,0 +1,5 @@
+mutation DeleteAssetTypeSpecification($input: DeleteAssetTypeSpecificationsInput!) {
+  deleteAssetTypeSpecification(input: $input) {
+    id
+  }
+}

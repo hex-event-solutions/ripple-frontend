@@ -1,0 +1,5 @@
+mutation DeleteAssetTypeMultiplierType($input: DeleteAssetTypeMultiplierTypesInput!) {
+  deleteAssetTypeMultiplierType(input: $input) {
+    id
+  }
+}

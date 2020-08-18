@@ -1,0 +1,12 @@
+mutation CreateEventItem($input: CreateEventItemsInput!) {
+  createEventItem(input: $input) {
+    eventItem {
+      discount quantity item {
+        __typename
+        ... on AssetType { id name primaryImage { id small large } }
+        ... on Asset { id barcode assetType { id name primaryImage { id small large } } }
+        ... on RowItem { id description }
+      }
+    }
+  }
+}

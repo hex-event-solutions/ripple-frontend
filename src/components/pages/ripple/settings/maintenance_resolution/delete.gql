@@ -1,0 +1,5 @@
+mutation DeleteMaintenanceResolution($input: DeleteMaintenanceResolutionsInput!) {
+  deleteMaintenanceResolution(input: $input) {
+    id
+  }
+}

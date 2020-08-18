@@ -1,0 +1,5 @@
+mutation UpdateDocumentType($input: UpdateDocumentTypesInput!) {
+  updateDocumentType(input: $input) {
+    documentType { id name header content footer styles subject incrementPattern incremental dateIssued dateDue }
+  }
+}

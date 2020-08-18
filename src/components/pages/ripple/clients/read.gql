@@ -1,0 +1,6 @@
+query {
+  clients {
+    id organisationName address discount
+    clientType { id name }
+  }
+}

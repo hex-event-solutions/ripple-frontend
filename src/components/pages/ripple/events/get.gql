@@ -1,0 +1,16 @@
+query($id: ID!) {
+  event(id: $id) {
+    id description location details dateStart dateEnd dateOut dateReturn totalValue
+    client { id organisationName }
+    eventItems {
+      id discount quantity item {
+        __typename
+        ... on AssetType { id name primaryImage { id small large } }
+        ... on Asset { id barcode assetType { id name primaryImage { id small large } } }
+        ... on RowItem { id description price }
+      }
+    }
+  }
+  assetTypes { id name }
+  rowItemDescriptions
+}

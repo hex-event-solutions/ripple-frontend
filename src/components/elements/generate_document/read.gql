@@ -1,0 +1,3 @@
+query($subject: DocumentTypeSubject) {
+  documentTypes(subject: $subject) { id name }
+}

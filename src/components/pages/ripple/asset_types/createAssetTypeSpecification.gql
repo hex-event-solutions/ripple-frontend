@@ -1,0 +1,5 @@
+mutation CreateAssetTypeSpecification($input: CreateAssetTypeSpecificationsInput!) {
+  createAssetTypeSpecification(input: $input) {
+    assetTypeSpecification { id assetType { id name } specification { id name } }
+  }
+}

@@ -1,0 +1,5 @@
+mutation CreateDocument($input: CreateDocumentsInput!) {
+  createDocument(input: $input) {
+    document { id reference url }
+  }
+}

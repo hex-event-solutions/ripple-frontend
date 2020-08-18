@@ -1,0 +1,5 @@
+query ($id: ID!) {
+  documentType(id: $id) {
+    id name subject incremental dateIssued dateDue
+  }
+}

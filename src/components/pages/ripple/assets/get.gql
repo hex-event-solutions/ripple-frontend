@@ -1,0 +1,7 @@
+query ($id: ID!) {
+  asset(id: $id) {
+    id assetType { id name } assetCase { id barcode } barcode
+  }
+  assetTypes { id name }
+  assetCases { id barcode }
+}

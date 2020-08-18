@@ -1,0 +1,5 @@
+mutation CreateAssetTypeMultiplierType($input: CreateAssetTypeMultiplierTypesInput!) {
+  createAssetTypeMultiplierType(input: $input) {
+    assetTypeMultiplierType { id assetType { id } multiplierType { id } }
+  }
+}

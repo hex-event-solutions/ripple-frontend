@@ -1,0 +1,3 @@
+query {
+  assets { id barcode assetType { id name primaryImage { id small large } } }
+}

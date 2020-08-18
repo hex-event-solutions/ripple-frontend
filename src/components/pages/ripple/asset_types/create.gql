@@ -1,0 +1,5 @@
+mutation CreateAssetType($input: CreateAssetTypesInput!) {
+  createAssetType(input: $input) {
+    assetType { id manufacturer model rate cost weight displayOnWebsite description }
+  }
+}

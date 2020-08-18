@@ -1,0 +1,3 @@
+query {
+  assetCases { id barcode assets { id } }
+}

@@ -1,0 +1,6 @@
+query ($id: ID!) {
+  documentType(id: $id) { id name header footer content styles subject incrementPattern incrementStart incremental dateIssued dateDue }
+  __type(name: "DocumentTypeSubject") {
+    name enumValues { name }
+  }
+}

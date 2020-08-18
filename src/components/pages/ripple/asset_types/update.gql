@@ -1,0 +1,5 @@
+mutation UpdateAssetType($input: UpdateAssetTypesInput!) {
+  updateAssetType(input: $input) {
+    assetType { id manufacturer model rate cost weight displayOnWebsite description }
+  }
+}

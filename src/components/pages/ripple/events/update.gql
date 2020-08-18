@@ -1,0 +1,5 @@
+mutation UpdateEvent($input: UpdateEventsInput!) {
+  updateEvent(input: $input) {
+    event { id description location details dateStart dateEnd dateOut dateReturn }
+  }
+}

@@ -1,0 +1,5 @@
+mutation UpdateMaintenanceResolution($input: UpdateMaintenanceResolutionsInput!) {
+  updateMaintenanceResolution(input: $input) {
+    maintenanceResolution { id name }
+  }
+}

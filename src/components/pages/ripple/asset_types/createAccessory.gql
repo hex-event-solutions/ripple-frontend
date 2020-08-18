@@ -1,0 +1,5 @@
+mutation CreateAccessory($input: CreateAccessoriesInput!) {
+  createAccessory(input: $input) {
+    accessory { id assetType { id } accessory { id } }
+  }
+}

@@ -1,0 +1,5 @@
+query {
+  __type(name: "DocumentTypeSubject") {
+    name enumValues { name }
+  }
+}

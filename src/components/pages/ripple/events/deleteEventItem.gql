@@ -1,0 +1,5 @@
+mutation DeleteEventItem($input: DeleteEventItemsInput!) {
+  deleteEventItem(input: $input) {
+    id
+  }
+}

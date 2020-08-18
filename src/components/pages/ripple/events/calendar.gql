@@ -1,0 +1,5 @@
+query ($date: ISO8601DateTime!) {
+  calendar(date: $date) {
+    id date days { id date events { id description } }
+  }
+}

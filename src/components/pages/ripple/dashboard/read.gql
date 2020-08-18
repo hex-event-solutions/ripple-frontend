@@ -1,0 +1,3 @@
+query {
+  upcomingEvents eventsToday unpaidInvoices overdueInvoices upcomingReturns returnsToday overdueReturns equipmentShortages
+}

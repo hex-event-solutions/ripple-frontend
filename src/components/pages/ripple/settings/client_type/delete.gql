@@ -1,0 +1,5 @@
+mutation DeleteClientType($input: DeleteClientTypesInput!) {
+  deleteClientType(input: $input) {
+    id
+  }
+}

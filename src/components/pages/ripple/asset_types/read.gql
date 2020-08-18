@@ -1,0 +1,7 @@
+query {
+  assetTypes {
+    id manufacturer model name rate cost weight primaryImage { id small large }
+    assetTypeMultiplierTypes { multiplierType { summary } }
+    assetTypeCategories { category { fullname } }
+  }
+}

@@ -1,0 +1,3 @@
+query {
+  maintenanceTypes { id name }
+}

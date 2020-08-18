@@ -1,0 +1,3 @@
+query {
+  documentTypes { id name subject }
+}

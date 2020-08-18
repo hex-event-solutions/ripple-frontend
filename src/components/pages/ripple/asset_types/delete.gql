@@ -1,0 +1,5 @@
+mutation DeleteAssetType($input: DeleteAssetTypesInput!) {
+  deleteAssetType(input: $input) {
+    id
+  }
+}

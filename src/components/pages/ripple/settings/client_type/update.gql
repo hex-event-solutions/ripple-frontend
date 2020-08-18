@@ -1,0 +1,5 @@
+mutation UpdateClientType($input: UpdateClientTypesInput!) {
+  updateClientType(input: $input) {
+    clientType { id name }
+  }
+}

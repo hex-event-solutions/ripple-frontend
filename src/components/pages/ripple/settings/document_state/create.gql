@@ -1,0 +1,5 @@
+mutation CreateDocumentState($input: CreateDocumentStatesInput!) {
+  createDocumentState(input: $input) {
+    documentState { id name }
+  }
+}

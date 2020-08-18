@@ -1,0 +1,6 @@
+query {
+  events {
+    id description location dateStart dateEnd dateOut dateReturn
+    client { id organisationName }
+  }
+}

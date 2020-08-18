@@ -1,0 +1,5 @@
+mutation UpdateDocumentState($input: UpdateDocumentStatesInput!) {
+  updateDocumentState(input: $input) {
+    documentState { id name }
+  }
+}

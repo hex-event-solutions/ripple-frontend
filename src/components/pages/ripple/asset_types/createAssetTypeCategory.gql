@@ -1,0 +1,5 @@
+mutation CreateAssetTypeCategory($input: CreateAssetTypeCategoriesInput!) {
+  createAssetTypeCategory(input: $input) {
+    assetTypeCategory { id assetType { id } category { id } }
+  }
+}

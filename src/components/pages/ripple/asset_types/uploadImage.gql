@@ -1,0 +1,5 @@
+mutation UploadImage($input: UploadImagesInput!) {
+  uploadImage(input: $input) {
+    blob { id serviceUrl headers }
+  }
+}

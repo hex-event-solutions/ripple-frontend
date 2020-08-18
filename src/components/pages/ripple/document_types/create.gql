@@ -1,0 +1,5 @@
+mutation CreateDocumentType($input: CreateDocumentTypesInput!) {
+  createDocumentType(input: $input) {
+    documentType { id name }
+  }
+}

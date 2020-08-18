@@ -1,0 +1,5 @@
+mutation UpdateAsset($input: UpdateAssetsInput!) {
+  updateAsset(input: $input) {
+    asset { id barcode assetType { id name } assetCase { id barcode } }
+  }
+}

@@ -1,0 +1,4 @@
+query {
+  clients { id organisationName clientType { id name } }
+  locations
+}

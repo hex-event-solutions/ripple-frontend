@@ -1,0 +1,5 @@
+mutation DeleteMaintenanceType($input: DeleteMaintenanceTypesInput!) {
+  deleteMaintenanceType(input: $input) {
+    id
+  }
+}

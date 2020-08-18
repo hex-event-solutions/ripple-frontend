@@ -1,0 +1,3 @@
+query ($manufacturer: String!) {
+  models(manufacturer: $manufacturer)
+}
