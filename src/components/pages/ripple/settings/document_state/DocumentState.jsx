@@ -71,7 +71,7 @@ const DocumentState = () => {
         <Col>
           <h1>Document States</h1>
           <p>Document states allow you to keep track of what each document is currently doing</p>
-          <Table>
+          <Table responsive>
             <thead>
               <tr><th>Name</th><th width='20%'></th></tr>
             </thead>

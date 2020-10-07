@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import NavbarUser from './NavbarUser'
+import { AppContext } from '../state/AppContext'
 
 const RippleNavbar = () => {
+
+  const { getSetting } = useContext(AppContext)
+
+  const langClient = getSetting('Language - Client')
+  const langEvent = getSetting('Language - Event')
+  const langAsset = getSetting('Language - Asset')
+
   return (
     <Navbar className='home-header' variant='dark' sticky='top' expand='xl' collapseOnSelect >
       <Navbar.Brand as={Link} to='/'>Ripple</Navbar.Brand>
@@ -14,18 +22,18 @@ const RippleNavbar = () => {
       <Navbar.Collapse id="header-nav">
         <Nav>
           <Nav.Link eventKey={1} as={Link} to="/ripple">Dashboard</Nav.Link>
-          <NavDropdown title="Clients">
-            <NavDropdown.Item eventKey={2} as={Link} to="/ripple/clients">Clients</NavDropdown.Item>
-            <NavDropdown.Item eventKey={3} as={Link} to="/ripple/clients/new">New client</NavDropdown.Item>
+          <NavDropdown className='text-capitalize' title={langClient.plural}>
+            <NavDropdown.Item eventKey={2} as={Link} to={`/ripple/clients`}>{langClient.plural}</NavDropdown.Item>
+            <NavDropdown.Item eventKey={3} as={Link} to={`/ripple/client/new`}>New {langClient.value}</NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="Events">
-            <NavDropdown.Item eventKey={4} as={Link} to="/ripple/events/calendar">Calendar</NavDropdown.Item>
-            <NavDropdown.Item eventKey={5} as={Link} to="/ripple/events/new">New event</NavDropdown.Item>
-            <NavDropdown.Item eventKey={6} as={Link} to="/ripple/events">All events</NavDropdown.Item>
+          <NavDropdown className='text-capitalize' title={langEvent.plural}>
+            <NavDropdown.Item eventKey={4} as={Link} to={`/ripple/events/calendar`}>Calendar</NavDropdown.Item>
+            <NavDropdown.Item eventKey={5} as={Link} to={`/ripple/events/new`}>New {langEvent.value}</NavDropdown.Item>
+            <NavDropdown.Item eventKey={6} as={Link} to={`/ripple/events`}>All {langEvent.plural}</NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="Equipment">
-            <NavDropdown.Item eventKey={7} as={Link} to="/ripple/asset-types">Asset Types</NavDropdown.Item>
-            <NavDropdown.Item eventKey={8} as={Link} to="/ripple/assets">Assets</NavDropdown.Item>
+          <NavDropdown className='text-capitalize' title="Equipment">
+            <NavDropdown.Item eventKey={7} as={Link} to={`/ripple/asset-types`}>{langAsset.value} Types</NavDropdown.Item>
+            <NavDropdown.Item eventKey={8} as={Link} to={`/ripple/assets`}>{langAsset.plural}</NavDropdown.Item>
             <NavDropdown.Item eventKey={9} as={Link} to="/ripple/cases">Cases</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Maintenance">

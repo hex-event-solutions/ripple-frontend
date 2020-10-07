@@ -71,7 +71,7 @@ const MaintenanceResolution = () => {
         <Col>
           <h1>Maintenance Resolutions</h1>
           <p>Maintenance resolutions represent different states of maintenance on a particular asset</p>
-          <Table>
+          <Table responsive>
             <thead>
               <tr><th>Name</th><th width='20%'></th></tr>
             </thead>

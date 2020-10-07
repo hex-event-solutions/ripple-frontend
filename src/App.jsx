@@ -28,6 +28,7 @@ import Public from './components/pages/Public'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Alert from 'react-bootstrap/Alert'
 
 library.add(fas)
 
@@ -39,18 +40,17 @@ const AlertTemplate = ({ style, options, message, close }) => {
     warning: 'warning'
   }
   return (
-    <div style={ { ...style, display: 'flex', justifyContent: 'space-between' } } className={` p-3 text-light bg-${dict[options.type]} border rounded`}>
-      <p className='mb-0'>
-        { options.type === 'info' && <FontAwesomeIcon icon='info-circle' /> }
-        { options.type === 'success' && <FontAwesomeIcon icon='check-circle' /> }
-        { options.type === 'error' && <FontAwesomeIcon icon='times-circle' /> }
-        { options.type === 'warning' && <FontAwesomeIcon icon='info-circle' /> }
-      </p>
-      <p className='mb-0 px-3'>
-        { message }
-      </p>
-      <button style={ { border: 'none', backgroundColor: 'transparent', color: 'white' } } onClick={ close }><FontAwesomeIcon icon='times' /></button>
-    </div>
+    <Alert dismissible variant={dict[options.type]} style={{marginTop: '60px'}}>
+      { options.type === 'info' && <FontAwesomeIcon icon='info-circle' /> }
+      { options.type === 'success' && <FontAwesomeIcon icon='check-circle' /> }
+      { options.type === 'error' && <FontAwesomeIcon icon='times-circle' /> }
+      { options.type === 'warning' && <FontAwesomeIcon icon='info-circle' /> }
+      <span className='p-2'></span>
+      { message }
+    </Alert>
+    // <div style={ { ...style, display: 'flex', justifyContent: 'space-between' } } className={` p-3 text-light bg-${dict[options.type]} border rounded`}>
+
+    // </div>
   )
 }
 
@@ -82,8 +82,7 @@ const App = () => {
   })
 
   const alertOptions = {
-    timeout: 4000,
-    offset: '30px'
+    timeout: 4000
   }
 
   const [navbar, setNavbar] = useState('')
@@ -103,18 +102,18 @@ const App = () => {
   return (
     <HelmetProvider>
       <ApolloProvider client={client}>
-        <AlertProvider template={AlertTemplate} {...alertOptions}>
-          <BrowserRouter>
-            { navbar }
-            <main role='main' className='flex-shrink-0'>
+        <BrowserRouter>
+          { navbar }
+          <main role='main' className='flex-shrink-0'>
+            <AlertProvider template={AlertTemplate} {...alertOptions}>
               <Switch>
                 <Route path='/ripple' component={Ripple} />
                 <Route component={Public} />
               </Switch>
-            </main>
-            <Footer />
-          </BrowserRouter>
-        </AlertProvider>
+            </AlertProvider>
+          </main>
+          <Footer />
+        </BrowserRouter>
       </ApolloProvider>
     </HelmetProvider>
   )

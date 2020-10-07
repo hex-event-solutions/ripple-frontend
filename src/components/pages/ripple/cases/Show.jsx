@@ -29,7 +29,7 @@ const Show = () => {
       <Heading title={`Case ${data.assetCase.barcode}`} />
       <Row>
         <Col>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th width="12%">Image</th>

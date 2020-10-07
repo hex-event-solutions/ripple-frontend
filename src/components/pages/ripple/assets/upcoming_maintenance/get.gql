@@ -1,0 +1,9 @@
+query ($id: ID!) {
+  asset(id: $id) {
+    id
+    nextMaintenanceDue {
+      id due
+      maintenanceSchedule { id maintenanceType { id name } }
+    }
+  }
+}

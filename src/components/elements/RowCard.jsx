@@ -49,7 +49,7 @@ const RowCard = props => {
   return (
     <Row className='home-row'>
       <Col sm={ {span: span, offset: offset} }>
-        <Card border='light' className={ classes } { ...others }>
+        <Card border='dark' className={ classes } { ...others }>
           <Card.Body>
             <Container fluid>
               { content }

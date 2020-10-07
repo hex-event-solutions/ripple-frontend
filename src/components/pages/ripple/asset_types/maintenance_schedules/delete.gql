@@ -1,0 +1,5 @@
+mutation DeleteAssetTypeMaintenanceSchedule($input: DeleteAssetTypeMaintenanceSchedulesInput!) {
+  deleteAssetTypeMaintenanceSchedule(input: $input) {
+    id
+  }
+}

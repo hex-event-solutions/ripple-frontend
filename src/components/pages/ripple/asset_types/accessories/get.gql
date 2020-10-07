@@ -1,0 +1,6 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id accessories { id quantity accessory { id name } }
+  }
+  availableAccessories(assetTypeId: $id) { id name }
+}

@@ -9,6 +9,10 @@ import { useMutation } from '../../../../helpers/GraphQL'
 import RippleSpinner from '../../../elements/RippleSpinner'
 import Heading from '../../../elements/Heading'
 import AssetForm from './AssetForm'
+import MaintenanceEvents from './maintenance_events/MaintenanceEvents'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import UpcomingMaintenance from './upcoming_maintenance/UpcomingMaintenance'
 
 const getQuery = loader('./get.gql')
 
@@ -26,8 +30,12 @@ const Edit = () => {
 
   return (
     <Container fluid>
-      <Heading title={`Edit ${data.asset.barcode}`} />
+      <Heading title={data.asset.barcode} />
       <AssetForm asset={data.asset} mutation={sendUpdate} />
+      <Row>
+        <Col sm={12}><UpcomingMaintenance id={id} /></Col>
+        <Col sm={12}><MaintenanceEvents id={id} /></Col>
+      </Row>
     </Container>
   )
 }

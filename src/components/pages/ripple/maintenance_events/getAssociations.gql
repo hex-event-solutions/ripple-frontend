@@ -1,0 +1,9 @@
+query($assetId: ID!, $scheduleId: ID!) {
+  asset(id: $assetId) {
+    id assetType { id name } barcode
+  }
+  maintenanceSchedule(id: $scheduleId) {
+    id summary
+    maintenanceType { id name tasks { id taskType name values { id value } } }
+  }
+}

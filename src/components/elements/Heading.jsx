@@ -16,7 +16,7 @@ const Heading = (props) => {
       </Helmet>
       <Col sm={12} lg={width} className='pb-3'>
         <div className='border-bottom border-primary'>
-          <h1 className='text-primary'><b>{ title }</b></h1>
+          <h1 className='text-primary text-capitalize'><b>{ title }</b></h1>
         </div>
       </Col>
       <Col sm={12} lg={12 - width} className='text-right'>

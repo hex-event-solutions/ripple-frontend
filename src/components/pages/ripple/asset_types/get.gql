@@ -1,16 +1,5 @@
 query ($id: ID!) {
   assetType(id: $id) {
     id manufacturer model name rate cost weight displayOnWebsite description
-    assetTypeCategories { id category { id fullname } }
-    assetTypeMultiplierTypes { id multiplierType { id name multiplier multiplierType operandQuantity operandType } }
-    accessories { id quantity accessory { id name } }
-    assetTypeSpecifications { id specification { id name } value }
-    documents { id reference dateIssued dateDue createdAt url documentType { id name } }
-    resourceImages { id image { id small large alt } }
   }
-  availableSpecifications(assetTypeId: $id) { id name }
-  availableAccessories(assetTypeId: $id) { id name }
-  availableCategories(assetTypeId: $id) { id fullname }
-  availableMultiplierTypes(assetTypeId: $id) { id name summary }
-  manufacturers
 }

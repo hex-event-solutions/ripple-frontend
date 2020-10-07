@@ -28,7 +28,7 @@ const Index = () => {
       </Heading>
       <Row>
         <Col>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th>Organisation Name</th>

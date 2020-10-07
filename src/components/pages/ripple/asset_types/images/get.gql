@@ -1,0 +1,5 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id resourceImages { id image { id small large } }
+  }
+}

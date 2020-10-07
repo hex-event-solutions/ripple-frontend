@@ -70,7 +70,7 @@ const MaintenanceType = () => {
         <Col>
           <h1>Maintenance Types</h1>
           <p>Maintenance types allow you to organise and categories different maintenance events</p>
-          <Table>
+          <Table responsive>
             <thead>
               <tr><th>Name</th><th width='20%'></th></tr>
             </thead>

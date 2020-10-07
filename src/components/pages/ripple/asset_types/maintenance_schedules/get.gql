@@ -1,0 +1,7 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id maintenanceSchedules { id summary }
+  }
+  availableMaintenanceSchedules(assetTypeId: $id) { id summary }
+
+}

@@ -27,7 +27,7 @@ const Index = () => {
       <Heading title='Asset Cases' />
       <Row>
         <Col>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th>Barcode</th>

@@ -1,0 +1,6 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id assetTypeCategories { id category { id fullname } }
+  }
+  availableCategories(assetTypeId: $id) { id fullname }
+}

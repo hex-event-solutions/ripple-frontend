@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { loader } from 'graphql.macro'
 import { useQuery } from '@apollo/react-hooks'
@@ -14,23 +14,28 @@ import Heading from '../../../elements/Heading'
 import RippleSpinner from '../../../elements/RippleSpinner'
 import BlurImage from '../../../elements/BlurImage'
 import TableButton from '../../../elements/TableButton'
+import { AppContext } from '../../../../state/AppContext'
 
 const readQuery = loader('./read.gql')
 
 const Index = () => {
   const { loading, error, data } = useQuery(readQuery)
 
+  const { getSetting } = useContext(AppContext)
+
+  const langAsset = getSetting('Language - Asset')
+
   if (loading) return <RippleSpinner />
   if (error) return `Error! ${error.message}`
 
   return (
     <Container fluid>
-      <Heading title='Asset types'>
+      <Heading title={`${langAsset.value} types`}>
         <Button variant='primary' as={Link} to='/ripple/asset-types/new'>New</Button>
       </Heading>
       <Row>
         <Col>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th width="12%">Image</th>

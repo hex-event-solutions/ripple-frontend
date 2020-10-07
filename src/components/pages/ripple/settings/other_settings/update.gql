@@ -1,0 +1,5 @@
+mutation UpdateCompanySetting($input: UpdateCompanySettingsInput!) {
+  updateCompanySetting(input: $input) {
+    companySetting { id value setting { id name } }
+  }
+}

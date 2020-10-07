@@ -151,7 +151,7 @@ const Edit = () => {
         </Col>
         <Col sm={12} xl={6}>
           <h2>Asset types</h2>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th width='12%'>Image</th>
@@ -198,7 +198,7 @@ const Edit = () => {
         </Col>
         <Col sm={12} xl={6}>
           <h2>Additional Items</h2>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th>Description</th>

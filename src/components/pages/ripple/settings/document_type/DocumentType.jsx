@@ -41,7 +41,7 @@ const DocumentType = () => {
         <Col>
           <h1>Document Templates</h1>
           <p>Document templates create a clean and reusable way of producing PDFs for your clients or staff</p>
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th>Name</th>

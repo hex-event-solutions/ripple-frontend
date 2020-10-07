@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { useInput } from '../../../../hooks/InputHook'
 import { useAlert } from 'react-alert'
@@ -14,6 +14,7 @@ import RippleSpinner from '../../../elements/RippleSpinner'
 import InputGroup from 'react-bootstrap/InputGroup'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import { AppContext } from '../../../../state/AppContext'
 
 const readAssetTypes = loader('./readAssetTypes.gql')
 
@@ -21,6 +22,10 @@ const AssetForm = (props) => {
   const { asset, mutation } = props
 
   const { data, loading } = useQuery(readAssetTypes)
+
+  const { getSetting } = useContext(AppContext)
+
+  const langAsset = getSetting('Language - Asset')
 
   const {value: assetType, setValue: setAssetType, reset: resetAssetType, bind: bindAssetType } = useInput('')
   const {value: assetCase, setValue: setAssetCase, reset: resetAssetCase, bind: bindAssetCase } = useInput('')
@@ -89,7 +94,7 @@ const AssetForm = (props) => {
     <Form onSubmit={handleSubmit}>
       <Form.Row>
         <Form.Group as={Col} lg={6}>
-          <Form.Label as='p'>Asset type</Form.Label>
+          <Form.Label className='text-capitalize' as='p'>{langAsset.value} type</Form.Label>
           <InputGroup>
             <Form.Control as='select' {...bindAssetType} >
               <option hidden disabled value=''></option>

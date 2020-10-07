@@ -1,0 +1,6 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id assetTypeMultiplierTypes { id multiplierType { id name multiplier multiplierType operandQuantity operandType } }
+  }
+  availableMultiplierTypes(assetTypeId: $id) { id name summary }
+}

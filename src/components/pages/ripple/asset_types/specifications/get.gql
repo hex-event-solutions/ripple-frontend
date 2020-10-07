@@ -1,0 +1,6 @@
+query ($id: ID!) {
+  assetType(id: $id) {
+    id assetTypeSpecifications { id specification { id name } value }
+  }
+  availableSpecifications(assetTypeId: $id) { id name }
+}

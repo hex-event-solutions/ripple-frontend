@@ -1,0 +1,5 @@
+mutation DeleteAssetMaintenanceEvent($input: DeleteAssetMaintenanceEventsInput!) {
+  deleteAssetMaintenanceEvent(input: $input) {
+    id
+  }
+}

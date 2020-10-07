@@ -17,7 +17,8 @@ const initialState = {
   groups: [],
   logoutUrl: '',
   loginUrl: '',
-  accountUrl: ''
+  accountUrl: '',
+  settings: []
 }
 
 export const AppProvider = props => {
@@ -37,6 +38,8 @@ export const AppProvider = props => {
   const [accountUrl, setAccountUrl] = useLocalStorage('ripple.accountUrl', initialState.accountUrl)
   const [ssoRequired, setSsoRequired] = useLocalStorage('ripple.ssoRequired', false)
 
+  const [globalSettings, setGlobalSettings] = useLocalStorage('ripple.settings', initialState.settings)
+
   const keycloak = Keycloak(`/keycloak_${config.environment}.json`)
 
   keycloak.onTokenExpired = () => {
@@ -47,6 +50,19 @@ export const AppProvider = props => {
     })
   }
 
+  const findSetting = (settings, name) => {
+    return settings.find(setting => setting.name == name)
+  }
+
+  const defaultSettings = [
+    { name: 'Language - Event', value: 'event', plural: 'events' },
+    { name: 'Language - Client', value: 'client', plural: 'clients' },
+    { name: 'Language - Asset', value: 'asset', plural: 'assets' }
+  ]
+
+  const getSetting = (name) => {
+    return findSetting(globalSettings, name) || findSetting(defaultSettings, name)
+  }
 
   useEffect(() => {
     keycloak.init({onLoad: (ssoRequired ? 'login-required' : 'check-sso')}).then(authenticated => {
@@ -100,6 +116,8 @@ export const AppProvider = props => {
     accountUrl,
     keycloak,
     setSsoRequired,
+    setGlobalSettings,
+    getSetting,
     login, logout
   }
 

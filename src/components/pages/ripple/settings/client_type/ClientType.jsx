@@ -71,7 +71,7 @@ const ClientType = () => {
         <Col>
           <h1>Client Types</h1>
           <p>Client types allow you to categorise your clients between individuals and other companies</p>
-          <Table>
+          <Table responsive>
             <thead>
               <tr><th>Name</th><th width='20%'></th></tr>
             </thead>

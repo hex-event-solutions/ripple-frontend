@@ -1,0 +1,6 @@
+query($id: ID!) {
+  maintenanceEvent(id: $id) {
+    id details
+    maintenanceType { id name }
+  }
+}

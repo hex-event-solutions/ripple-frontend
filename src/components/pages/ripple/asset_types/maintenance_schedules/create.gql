@@ -1,0 +1,5 @@
+mutation CreateAssetTypeMaintenanceSchedule($input: CreateAssetTypeMaintenanceSchedulesInput!) {
+  createAssetTypeMaintenanceSchedule(input: $input) {
+    assetTypeMaintenanceSchedule { id assetType { id } maintenanceSchedule { id } }
+  }
+}

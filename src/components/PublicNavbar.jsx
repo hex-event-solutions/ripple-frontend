@@ -15,7 +15,7 @@ const RippleNavbar = () => {
         <Nav>
           <Nav.Link as={Link} to="/features">Features</Nav.Link>
           <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
-          <NavDropdown title="Contact Us">
+          <NavDropdown text='white' title="Contact Us">
             <NavDropdown.Item as={Link} to="/contact-us">Contact Us</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/faqs">FAQs</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/support">Support</NavDropdown.Item>

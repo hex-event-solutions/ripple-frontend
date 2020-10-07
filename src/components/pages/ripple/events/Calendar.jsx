@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import Container from 'react-bootstrap/Container'
 import Heading from '../../../elements/Heading'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
@@ -92,28 +92,45 @@ const Calendar = () => {
           <Button onClick={handleNextMonth}><FontAwesomeIcon icon='caret-right' /></Button>
         </ButtonGroup>
       </Heading>
-      <Row>
+      <Row className='d-none d-md-flex'>
+      {/* <Row> */}
         { headerDays.map((day) => (
           <Col>{ day }</Col>
         ))}
       </Row>
       { content.map((week) => (
-        <Row>
+        <Row className='px-3'>
           { week.map((day) => (
-            <Col className='p-0'>
-              <Card className={`bg-transparent h-100 border-left-0 border-right-0 border-bottom-0 rounded-0`}>
-                <Card.Body className='p-0'>
-                  <p className='h2 text-muted'>{ day.date ? `|${(new Date(day.date)).getDate()}` : '' }</p>
-                  { day.events.length == 0 ? '' : day.events.map((event) => {
-                    if (event.description == '') {
-                      return <Button block disabled variant='white' className='text-white'>spacer</Button>
-                    } else {
-                      return <Button block className='rounded-0' as={Link} to={`/ripple/event/${event.id}`} >{ event.description }</Button>
-                    }
-                  })}
-                </Card.Body>
-              </Card>
-            </Col>
+            <Fragment>
+              <Col sm={12} className='p-0 d-md-none'>
+                <Card className={`bg-transparent h-100 border-0`}>
+                  <Card.Body className='p-0'>
+                    <p className='h2 text-muted'>{ day.date ? `|${(new Date(day.date)).getDate()}` : '' }</p>
+                    { day.events.length == 0 ? '' : day.events.map((event) => {
+                      if (event.description == '') {
+                        return <Button block disabled variant='white' className='text-white'>spacer</Button>
+                      } else {
+                        return <Button block className='rounded-0' as={Link} to={`/ripple/event/${event.id}`} >{ event.description }</Button>
+                      }
+                    })}
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col className='p-0 d-none d-md-block'>
+                <Card className={`bg-transparent h-100 border-left-0 border-right-0 border-bottom-0 rounded-0`}>
+                  <Card.Body className='p-0'>
+                    <p className='h2 text-muted'>{ day.date ? `|${(new Date(day.date)).getDate()}` : '' }</p>
+                    { day.events.length == 0 ? '' : day.events.map((event) => {
+                      if (event.description == '') {
+                        return <Button block disabled variant='white' className='text-white'>spacer</Button>
+                      } else {
+                        return <Button block className='rounded-0' as={Link} to={`/ripple/event/${event.id}`} >{ event.description }</Button>
+                      }
+                    })}
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Fragment>
           ))}
         </Row>
       ))}
